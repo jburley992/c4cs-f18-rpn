@@ -20,7 +20,9 @@ def calculate(arg):
                 stack.append(v1 * v2)
             if x == '/':
                 stack.append(v1 / v2)
-    return stack[0]
+    if len(stack) == 1:
+        return stack[0]
+    return None
 def main():
     while True :
         calculate(input('rpn calc> '))

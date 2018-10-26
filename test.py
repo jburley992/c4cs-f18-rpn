@@ -9,3 +9,6 @@ class TestBasics(unittest.TestCase):
     def test_sub(self):
         result = main.calculate('4 3 -')
         self.assertEqual(1,result)
+    def test_toomany(self):
+        with self.assertRaises(ValueError)
+            result = main.calculate('3 4 3 +')
