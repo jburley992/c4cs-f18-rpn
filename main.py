@@ -14,18 +14,21 @@ def calculate(arg):
             v1 = stack.pop()
             if x == '+':
                 stack.append(v1 + v2)
-            if x == '-':
+            elif x == '-':
                 stack.append(v1 - v2)
-            if x == '*':
+            elif x == '*':
                 stack.append(v1 * v2)
-            if x == '/':
+            elif x == '/':
                 stack.append(v1 / v2)
     if len(stack) == 1:
         return stack[0]
-    return None
+    raise ValueError("Too many arguments on stack")
 def main():
     while True :
-        calculate(input('rpn calc> '))
+        try:
+            calculate(input('rpn calc> '))
+        except ValueError:
+            pass
 
 if __name__ == '__main__':
     main()
