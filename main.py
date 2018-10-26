@@ -10,9 +10,16 @@ def calculate(arg):
         try:
             stack.append(int(x))
         except ValueError:
-            v1 = stack.pop()
             v2 = stack.pop()
-            stack.append(v1 + v2)
+            v1 = stack.pop()
+            if x == '+':
+                stack.append(v1 + v2)
+            if x == '-':
+                stack.append(v1 - v2)
+            if x == '*':
+                stack.append(v1 * v2)
+            if x == '/':
+                stack.append(v1 / v2)
     return stack[0]
 def main():
     while True :
